@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Project_Euler_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const long prime_number = 600851475143;
+            int max = 0;
+            for (int index = 2; index < Math.Sqrt(prime_number); ++index)
+            {
+                if (prime_number % index ==0 && Is_Prime(index))
+                {
+                    max = index;
+                }
+            }
+            Console.WriteLine(max);
+            Console.ReadLine();
+        }
+        private static bool Is_Prime(int number)
+        {
+            for (int index = 2; index < Math.Sqrt(number); ++index)
+            {
+                if (number % index == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
